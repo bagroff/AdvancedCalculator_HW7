@@ -8,18 +8,22 @@ public class Main {
         EngineeringCalculator engineeringCalculator = new EngineeringCalculator();
 
         // Basic operations
-        double add = calculator.additionCalc(54, 31.5);
-        System.out.println("Addition result: " + add);
+        try {
+            double add = calculator.additionCalc(54.3, 31.5);
+            System.out.println("Addition result: " + add);
 
-        double sub = calculator.subtractionCalc(40.23, 32.73);
-        System.out.println("Subtraction result: " + sub);
+            double sub = calculator.subtractionCalc(40.23, 32.73);
+            System.out.println("Subtraction result: " + sub);
 
-        double multi = calculator.multiplicationCalc(20, 245);
-        System.out.println("Multiplication result: " + multi);
+            double multi = calculator.multiplicationCalc(20, 245);
+            System.out.println("Multiplication result: " + multi);
 
-        double div = calculator.divisionCalc(15, 5);
-        System.out.println("Division result: " + div);
-        System.out.println();
+            int div = calculator.divisionCalc(15, 0);
+            System.out.println("Division result: " + div);
+            System.out.println();
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
 
         // Advanced functions of Calc-family
         double interest = financialCalculator.calculateInterest(10000, 0.05, 3);

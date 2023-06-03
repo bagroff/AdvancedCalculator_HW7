@@ -1,3 +1,5 @@
+import java.nio.file.NoSuchFileException;
+
 public class Calculator {
     public double additionCalc(double a, double b) {
         return a + b;
@@ -11,11 +13,12 @@ public class Calculator {
         return a * b;
     }
 
-    public double divisionCalc(double a, double b) {
-        if (b != 0) {
+    public int divisionCalc(int a, int b) {
+
+        try {
             return a / b;
-        } else {
-            throw new ArithmeticException("Division by zero!");
-        }
+        } catch (ArithmeticException ex) {
+            System.out.println("Error! Division by zero not allowed!");
+        } return 0;
     }
 }
